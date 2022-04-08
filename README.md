@@ -7,10 +7,14 @@ Git clone repo, fix permissions and you are ready!\
 Open terminal, navigate to your favourite script folder and run:
 ```
 $ rm  -rvf ./sh-installer
-$ git clone https://github.com/carrara88/sh-installer.git ./sh-installer # download new files
-$ sudo chmod -R 755 ./sh-installer # fix permissions
+$ git clone https://github.com/carrara88/sh-installer.git ./sh-installer
+$ sudo chmod -R 755 ./sh-installer
 $ cd sh-installer
+$ ./installer.sh
 ```
+
+![Setup](screen.jpg)
+
 
 #### Available installers:
 
