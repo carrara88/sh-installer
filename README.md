@@ -20,6 +20,8 @@ $ ./installer.sh
 
  - [x] php
  - [x] apache
+ - [x] nginx
+ - [x] certbot
  - [x] mysql
  - [x] samba
  - [x] node
@@ -27,7 +29,6 @@ $ ./installer.sh
  - [x] lcd (LCD Drivers only for raspberry-pi)
 
 #### Coming-soon installers:
- - [ ] nginx
  - [ ] fail2ban
  - [ ] modSecurty
  - [ ] watchdog
