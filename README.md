@@ -1,5 +1,25 @@
-# sh-installer
-automatic bash installer scripts
+# sh-installer | bash installer scripts
+
+Created for an easy raspberry-pi setup, it can be used on any debian/unix system, enjoy!
+
+#### Available /installers:
+
+ - [x] PHP
+ - [x] APACHE
+ - [x] MYSQL
+ - [x] SAMBA
+ - [x] NODE
+ - [x] GSTREAMER
+ - [x] LCD-TFT Drivers (only for raspberry-pi)
+
+#### Coming-soon /installers:
+ - [ ] nginx
+ - [ ] fail2ban
+ - [ ] modSecurty
+ - [ ] watchdog
+ - [ ] composer
+ - [ ] docker
+ - [ ] couchdb
 
 ## Installer Config
 
