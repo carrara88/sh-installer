@@ -2,10 +2,11 @@
 
 Created for an easy raspberry-pi setup, it can be used on any debian/unix system, enjoy!
 
-# Setup
+##### Setup
 Git clone repo, fix permissions and you are ready!\
 Open terminal, navigate to your favourite script folder and run:
 ```
+$ rm  -rvf ./sh-installer
 $ git clone https://github.com/carrara88/sh-installer.git ./sh-installer # download new files
 $ sudo chmod -R 755 ./sh-installer # fix permissions
 $ cd sh-installer
