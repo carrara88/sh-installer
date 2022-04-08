@@ -61,7 +61,7 @@ Used to select a single script:
 example: ./installer.sh --script=php
 example: ./installer.sh -s=php
 ```
-##### Available Scripts
+##### available -s commands:
  - `$ ./installer.sh -s="php"`
  - `$ ./installer.sh -s="apache"`
  - `$ ./installer.sh -s="mysql"`
@@ -77,6 +77,9 @@ Used to overwrite any previous run:
 example: ./installer.sh --mode=1
 example: ./installer.sh -m=1
 ```
+##### available -m commands:
+ - `$ ./installer.sh -m=1`
+ - `$ ./installer.sh -s=0`
 
 Scripts are located into `./installers` folder, following the naming pattern `[script].installer.sh`.
 
