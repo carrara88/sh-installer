@@ -54,11 +54,11 @@ To perform single installer script, open console and run:
 ./installer.sh -s=[script] -m=[mode]
 ```
 
-#### Script Command
-Used to select a single script
-
+#### Command -s | --script
+Used to select a single script:
 ```
 -s = script-name
+example: ./installer.sh --script=php
 example: ./installer.sh -s=php
 ```
 ##### Available Scripts
@@ -70,18 +70,17 @@ example: ./installer.sh -s=php
  - `$ ./installer.sh -s="gstreamer"`
  - `$ ./installer.sh -s="lcd"`
 
-#### Mode Command
-Used to overwrite any previous run
-
+#### Command -m | --mode
+Used to overwrite any previous run:
 ```
 -m = mode
+example: ./installer.sh --mode=1
 example: ./installer.sh -m=1
 ```
 
 Scripts are located into `./installers` folder, following the naming pattern `[script].installer.sh`.
 
 ##### Examples:
-
 ```
 $ ./installer.sh "php"
 $ ./installer.sh "samba"
