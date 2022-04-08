@@ -4,13 +4,13 @@ Created for an easy raspberry-pi setup, it can be used on any debian/unix system
 
 #### Available /installers:
 
- - [x] PHP
- - [x] APACHE
- - [x] MYSQL
- - [x] SAMBA
- - [x] NODE
- - [x] GSTREAMER
- - [x] LCD-TFT Drivers (only for raspberry-pi)
+ - [x] php `$ ./installer.sh "php"`
+ - [x] apache `$ ./installer.sh "apache"`
+ - [x] mysql `$ ./installer.sh "mysql"`
+ - [x] samba `$ ./installer.sh "samba"`
+ - [x] node `$ ./installer.sh "node"`
+ - [x] gstreamer `$ ./installer.sh "gstreamer"`
+ - [x] lcd (LCD Drivers only for raspberry-pi) `$ ./installer.sh "lcd"`
 
 #### Coming-soon /installers:
  - [ ] nginx
