@@ -14,6 +14,7 @@ echo "${EMPTY}"
 echo "${LINECAP} mysql setup"
 echo "${EMPTY}"
 sudo apt-get install mariadb-server php-mysql -y # mysql
+sudo mysql_secure_installation -y
 
 # RESTART
 echo "${EMPTY}"
