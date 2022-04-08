@@ -2,7 +2,7 @@
 
 Created for an easy raspberry-pi setup, it can be used on any debian/unix system, enjoy!
 
-#### Available /installers:
+#### Available installers:
 
  - [x] php
  - [x] apache
@@ -12,7 +12,7 @@ Created for an easy raspberry-pi setup, it can be used on any debian/unix system
  - [x] gstreamer
  - [x] lcd (LCD Drivers only for raspberry-pi)
 
-#### Coming-soon /installers:
+#### Coming-soon installers:
  - [ ] nginx
  - [ ] fail2ban
  - [ ] modSecurty
@@ -20,6 +20,16 @@ Created for an easy raspberry-pi setup, it can be used on any debian/unix system
  - [ ] composer
  - [ ] docker
  - [ ] couchdb
+
+## Installers
+Installers are located into `./installers` sub-directory, following the naming pattern `[script-name].installer.sh`.
+
+##### Quick run examples:
+```
+$ ./installer.sh "php"
+$ ./installer.sh "samba"
+$ ./installer.sh "samba" 1
+```
 
 ## Installer Config
 
@@ -80,12 +90,3 @@ example: ./installer.sh -m=1
 ##### available -m commands:
  - `$ ./installer.sh -m=1`
  - `$ ./installer.sh -s=0`
-
-Scripts are located into `./installers` folder, following the naming pattern `[script].installer.sh`.
-
-##### Examples:
-```
-$ ./installer.sh "php"
-$ ./installer.sh "samba"
-$ ./installer.sh "samba" 1
-```
