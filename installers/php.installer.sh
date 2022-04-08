@@ -20,6 +20,5 @@ echo "${EMPTY}"
 echo "${LINECAP} apache restart"
 sudo service apache2 restart
 
-
 # TOUCH-STATUS
 touch "${INSTALLED}/php.status" #touch .status file
