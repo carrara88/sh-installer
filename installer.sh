@@ -1,16 +1,8 @@
 #!/bin/bash
 
 ##########################################################################################
-# INSTALLER - enable to run single or multiple .sh
+# INSTALLER - enable to run single or multiple .sh scripts
 # check out # MAIN-LOOP section at the end of this file 
-# examples:
-# --- installer commands (single) run on bash:
-#       $ ./installer.sh [script:string] [mode:integer] [arg-1] [arg-2] [arg-3]
-#       $ ./installer.sh php
-#       $ ./installer.sh php 1
-#       $ ./installer.sh samba 1
-# --- for installer selector (multiple) run on bash:
-#       $ ./installer.sh
 ##########################################################################################
 
 # TOOLS
@@ -22,7 +14,6 @@ INSTALLER_DIR="/home/pi/Desktop/sh-installer/installers" # base installer script
 # SETUPS
 DESTINATION="/var/www/server" # installers destination dir
 INSTALLED="${DESTINATION}/installed" # installers status dir
-
 
 # PARAMETERS
 parametersInstaller(){
@@ -41,6 +32,7 @@ parametersInstaller(){
         shift
     done
 }
+# UPDATE
 updateSystem(){
     sudo apt-get update -y
     sudo apt-get upgrade -y
@@ -158,7 +150,6 @@ loopInstaller(){
     done
     echo ${LINEBYE}
 }
-
 
 # MAIN-LOOP
 parametersInstaller $1 $2 $3 $4 $5 $6 $7 $8 $9 #load script parameters
