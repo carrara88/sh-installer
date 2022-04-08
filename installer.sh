@@ -84,7 +84,7 @@ forceInstaller(){
 }
 # SELECT
 selectInstaller(){
-    options=("samba" "node" "gstreamer" "apache" "php" "mysql" "lcd" "[update/upgrade]" "[reboot]" "[exit]")
+    options=("samba" "node" "gstreamer" "apache" "nginx" "php" "mysql" "lcd" "[update/upgrade]" "[reboot]" "[exit]")
     select opt in "${options[@]}" ; do
         case $opt in
             "samba")
@@ -93,6 +93,10 @@ selectInstaller(){
             ;;
             "node")
                 execInstaller "node" ${MODE}
+                break
+            ;;
+            "nginx")
+                execInstaller "nginx" ${MODE}
                 break
             ;;
             "php")
