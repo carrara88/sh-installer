@@ -4,13 +4,13 @@ Created for an easy raspberry-pi setup, it can be used on any debian/unix system
 
 #### Available /installers:
 
- - [x] php `$ ./installer.sh "php"`
- - [x] apache `$ ./installer.sh "apache"`
- - [x] mysql `$ ./installer.sh "mysql"`
- - [x] samba `$ ./installer.sh "samba"`
- - [x] node `$ ./installer.sh "node"`
- - [x] gstreamer `$ ./installer.sh "gstreamer"`
- - [x] lcd (LCD Drivers only for raspberry-pi) `$ ./installer.sh "lcd"`
+ - [x] php
+ - [x] apache
+ - [x] mysql
+ - [x] samba
+ - [x] node
+ - [x] gstreamer
+ - [x] lcd (LCD Drivers only for raspberry-pi)
 
 #### Coming-soon /installers:
  - [ ] nginx
@@ -54,16 +54,28 @@ To perform single installer script, open console and run:
 ./installer.sh -s=[script] -m=[mode]
 ```
 
-#### Script Selector
+#### Script Command
+Used to select a single script
 
 ```
 -s = script-name
+example: ./installer.sh -s=php
 ```
+##### Available Scripts
+ - `$ ./installer.sh -s="php"`
+ - `$ ./installer.sh -s="apache"`
+ - `$ ./installer.sh -s="mysql"`
+ - `$ ./installer.sh -s="samba"`
+ - `$ ./installer.sh -s="node"`
+ - `$ ./installer.sh -s="gstreamer"`
+ - `$ ./installer.sh -s="lcd"`
 
-#### Mode Selector
+#### Mode Command
+Used to overwrite any previous run
 
 ```
 -m = mode
+example: ./installer.sh -m=1
 ```
 
 Scripts are located into `./installers` folder, following the naming pattern `[script].installer.sh`.
