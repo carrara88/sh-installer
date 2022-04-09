@@ -1,6 +1,10 @@
-# sh-installer | bash installer scripts
+# SH-Installer | an easy bash script installer 
 
 Created for an easy raspberry-pi setup, it can be used on any debian/unix system, enjoy!
+
+__Version:__ 0.1 (unstable|incomplete) \
+__OS:__ Debian/Unix \
+__Require:__ curl, npm, git
 
 ##### Setup
 Git clone repo, fix permissions and you are ready!\
