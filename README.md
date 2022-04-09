@@ -8,20 +8,36 @@ __Require:__ curl, npm, git \
 
 ![Setup](screen.jpg)
 
+## Info
+
+SH-Installer perform setups, executing single or multiple bash scripts called __[Installers]__ and located into `/installers` subdirectory.
+You can run with __[Selector]__ terminal GUI or directly with __[Commands]__
+
 ## Setup
----
-Git clone repo, fix permissions and you are ready!\
-Open terminal, navigate to your favourite script folder and run:
+
+SH-Installer comes with a quick-setup script. Quick-setup install for you all dependencies and files. \
+Open terminal, navigate to your favourite script folder follow the steps below to setup.
+
+1) Remove any previous run:
 ```
 $ rm  -rf ./sh-installer
+```
+2) Git clone repo
+```
 $ git clone https://github.com/carrara88/sh-installer.git ./sh-installer
+```
+3) Fix permissions
+```
 $ sudo chmod -R 755 ./sh-installer
+```
+4) Run!
+```
 $ cd sh-installer
 $ ./installer.sh
 ```
 
 ## Installer Config
----
+
 Edit configurations on top of `installer.sh` file:
 
 ```
@@ -35,13 +51,13 @@ Edit configurations on top of `installer.sh` file:
 ```
 
 ## Installer Usage
----
+
 There are 2 ways to run installer, __[Selector]__ and __[Commands]__.
 
 Use __[Selector]__ to perform GUI installer loop, use __[Commands]__ to bypass GUI loop and run single installer script.
 
 ### Installer - Selector
----
+
 Main installer execute a GUI script selector. To perform single or multiple installer scripts open console and run:
 
 ```
@@ -49,7 +65,7 @@ Main installer execute a GUI script selector. To perform single or multiple inst
 ```
 
 ### Installer - Commands
----
+
 To perform single installer script, open console and run:
 
 ```
@@ -57,7 +73,7 @@ To perform single installer script, open console and run:
 ```
 
 #### Command -s | --script
----
+
 Used to select a single script:
 ```
 -s = script-name
@@ -74,7 +90,7 @@ example: ./installer.sh -s=php
  - `$ ./installer.sh -s="lcd"`
 
 #### Command -m | --mode
----
+
 Used to overwrite any previous run:
 ```
 -m = mode
@@ -87,7 +103,7 @@ example: ./installer.sh -m=1
 
 
 ## Installers (executable bash scripts)
----
+
 Installers (executable bash scripts), are located into `./installers` sub-directory, following the naming pattern `[script-name].installer.sh`.
 
 #### Available installers:
