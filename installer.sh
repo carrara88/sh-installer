@@ -10,7 +10,7 @@ source "./installer-tools.sh" # shared fn and vars
 # CONFIGURATIONS
 INSTALLER_LOOP=true
 OS_VERSION="bullseye" # OS version
-INSTALLER_DIR="/home/pi/Desktop/sh-installer/installers" # base installer scripts dir
+INSTALLER_DIR="./installers" # base installer scripts dir
 # SETUPS
 DESTINATION="/var/www/server" # installers destination dir
 INSTALLED="${DESTINATION}/installed" # installers status dir
@@ -39,8 +39,8 @@ updateSystem(){
 }
 # INIT
 beforeInstaller(){
-    mkdir -p ${DESTINATION} # make destination dir
-    mkdir -p ${INSTALLED} # make installed dir
+    sudo mkdir -p ${DESTINATION} # make destination dir
+    sudo mkdir -p ${INSTALLED} # make installed dir
 }
 # EXEC
 execInstaller () {
@@ -60,8 +60,8 @@ execInstaller () {
         if [ -f "${INSTALLER_DIR}/$1.installer.sh" ]; then # check for scripts
             echo "${LINECAP} $1.installer.sh loaded."
             if [ -d "${INSTALLED}/$1" ]; then
-                mkdir -p ${INSTALLED}/$1 # make installed dir
-                chmod -R 755 ${INSTALLED}/$1
+                sudo mkdir -p ${INSTALLED}/$1 # make installed dir
+                sudo chmod -R 755 ${INSTALLED}/$1
             fi
             source "${INSTALLER_DIR}/$1.installer.sh" # exec installer script
         else
