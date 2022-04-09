@@ -22,7 +22,7 @@ sudo ufw allow 'Nginx Full' -y
 sudo nft add rule inet filter input tcp dport {80, 443} ct state new,established counter accept
 
 sudo rm /etc/nginx/sites-available/default # rewrite default configuration
-sudo cat << EOF > /etc/nginx/sites-available/default
+cat << EOF > /etc/nginx/sites-available/default
 server {
 
 	listen 80 default_server;

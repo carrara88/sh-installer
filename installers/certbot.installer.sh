@@ -41,7 +41,7 @@ _CERTBOT_DOMAINS
 
 # Set up config file.
 sudo mkdir -p /etc/letsencrypt
-sudo cat << EOF > /etc/letsencrypt/cli.ini
+cat << EOF > /etc/letsencrypt/cli.ini
 
 # Uncomment to use the staging/testing server - avoids rate limiting.
 # server = https://acme-staging.api.letsencrypt.org/directory
