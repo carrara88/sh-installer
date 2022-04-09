@@ -6,9 +6,6 @@
 # gstreamer setup
 ##########################################################################################
 
-# TOOLS
-source "./installer-tools.sh" # shared fn and vars
-
 # ASKS
 _GSTREAMER_USER(){ # 
     read -p "${LINECAP} Select user for GSTREAMER root folder:" GSTREAMER_USER
@@ -32,4 +29,4 @@ sudo apt-get install gstreamer1.0-pulseaudio -y
 
 
 # TOUCH-STATUS
-touch "${INSTALLED}/gstreamer.status" #touch .status file
+sudo touch "${INSTALLED_DIR}/gstreamer.status" #touch .status file

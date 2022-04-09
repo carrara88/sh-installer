@@ -6,9 +6,6 @@
 # PHP setup
 ##########################################################################################
 
-# TOOLS
-source "./installer-tools.sh" # shared fn and vars
-
 # PHP
 echo "${EMPTY}"
 echo "${LINECAP} php setup"
@@ -27,4 +24,4 @@ echo "${LINECAP} apache restart"
 sudo service apache2 restart
 
 # TOUCH-STATUS
-touch "${INSTALLED}/php.status" #touch .status file
+sudo touch "${INSTALLED_DIR}/php.status" #touch .status file

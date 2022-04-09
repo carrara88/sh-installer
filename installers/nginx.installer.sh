@@ -6,9 +6,6 @@
 # nginx setup
 ##########################################################################################
 
-# TOOLS
-source "./installer-tools.sh" # shared fn and vars
-
 # APACHE
 echo "${EMPTY}"
 echo "${LINECAP} nginx setup"
@@ -25,7 +22,7 @@ sudo ufw allow 'Nginx Full' -y
 sudo nft add rule inet filter input tcp dport {80, 443} ct state new,established counter accept
 
 sudo rm /etc/nginx/sites-available/default # rewrite default configuration
-cat << EOF > /etc/nginx/sites-available/default
+sudo cat << EOF > /etc/nginx/sites-available/default
 server {
 
 	listen 80 default_server;
@@ -63,4 +60,4 @@ server {
 EOF
 
 # TOUCH-STATUS
-touch "${INSTALLED}/nginx.status" #touch .status file
+touch "${INSTALLED_DIR}/nginx.status" #touch .status file

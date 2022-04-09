@@ -8,9 +8,6 @@
 # The certbot-auto program logs to /var/log/letsencrypt.
 ##########################################################################################
 
-# TOOLS
-source "./installer-tools.sh" # shared fn and vars
-
 # APACHE
 echo "${EMPTY}"
 echo "${LINECAP} certbot setup"
@@ -32,19 +29,19 @@ _CERTBOT_DOMAINS(){ #
 }
 
 # No package install yet.
-wget https://dl.eff.org/certbot-auto
-chmod a+x certbot-auto
-mv certbot-auto /usr/local/bin
+sudo wget https://dl.eff.org/certbot-auto
+sudo chmod a+x certbot-auto
+sudo mv certbot-auto /usr/local/bin
 
 # Install the dependencies.
-certbot-auto --noninteractive --os-packages-only
+sudo certbot-auto --noninteractive --os-packages-only
 
 _CERTBOT_MAIL
 _CERTBOT_DOMAINS
 
 # Set up config file.
-mkdir -p /etc/letsencrypt
-cat << EOF > /etc/letsencrypt/cli.ini
+sudo mkdir -p /etc/letsencrypt
+sudo cat << EOF > /etc/letsencrypt/cli.ini
 
 # Uncomment to use the staging/testing server - avoids rate limiting.
 # server = https://acme-staging.api.letsencrypt.org/directory
@@ -69,12 +66,12 @@ webroot-path = /var/www/html
 EOF
 
 # Obtain cert.
-certbot-auto certonly
+sudo certbot-auto certonly
 
 # Set up daily cron job.
 CRON_SCRIPT="/etc/cron.daily/certbot-renew"
 
-cat > "${CRON_SCRIPT}" <<EOF
+sudo cat > "${CRON_SCRIPT}" <<EOF
 #!/bin/bash
 #
 # Renew the Let's Encrypt certificate if it is time. It won't do anything if
@@ -101,7 +98,7 @@ if service --status-all | grep -Fq 'nginx'; then
   service nginx reload
 fi
 EOF
-chmod a+x "${CRON_SCRIPT}"
+sudo chmod a+x "${CRON_SCRIPT}"
 
 # TOUCH-STATUS
-touch "${INSTALLED}/node.status" #touch .status file
+sudo touch "${INSTALLED_DIR}/node.status" #touch .status file

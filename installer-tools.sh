@@ -7,7 +7,7 @@
 # DEFAULTS
 PS3="> Select:"
 LINE="======================================================="
-LINETITLE="INSTALLERS"
+LINETITLE="====================== INSTALLERS ====================="
 LINEBYE="======================== Bye! ========================="
 LINESTEP=">"
 LINECAP="   | "
