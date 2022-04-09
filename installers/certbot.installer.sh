@@ -8,9 +8,6 @@
 # The certbot-auto program logs to /var/log/letsencrypt.
 ##########################################################################################
 
-# TOOLS
-source "./installer-tools.sh" # shared fn and vars
-
 # APACHE
 echo "${EMPTY}"
 echo "${LINECAP} certbot setup"
@@ -104,4 +101,4 @@ EOF
 sudo chmod a+x "${CRON_SCRIPT}"
 
 # TOUCH-STATUS
-sudo touch "${INSTALLED}/node.status" #touch .status file
+sudo touch "${INSTALLED_DIR}/node.status" #touch .status file

@@ -6,9 +6,6 @@
 # SAMBA user root setup
 ##########################################################################################
 
-# TOOLS
-source "./installer-tools.sh" # shared fn and vars
-
 # ASKS
 _SAMBA_USER(){ # 
     read -p "${LINECAP} Select user for SAMBA root folder:" SAMBA_USER
@@ -43,4 +40,4 @@ sudo /etc/init.d/smbd restart
 
 
 # TOUCH-STATUS
-sudo touch "${INSTALLED}/samba.status" #touch .status file
+sudo touch "${INSTALLED_DIR}/samba.status" #touch .status file

@@ -5,15 +5,18 @@
 # check out # MAIN-LOOP section at the end of this file 
 ##########################################################################################
 
-# TOOLS
-source "./installer-tools.sh" # shared fn and vars
+
 # CONFIGURATIONS
 INSTALLER_LOOP=true
 OS_VERSION="bullseye" # OS version
-INSTALLER_DIR="./installers" # base installer scripts dir
-# SETUPS
-DESTINATION="/var/www/server" # installers destination dir
-INSTALLED="${DESTINATION}/installed" # installers status dir
+
+# SETUP FOLDERS
+DESTINATION="/var/www/sh-installer" # installers destination dir
+INSTALLED_DIR="${DESTINATION}/installed" # installers status dir
+INSTALLER_DIR="${DESTINATION}/installers" # base installer scripts dir
+
+# TOOLS
+source "${DESTINATION}/installer-tools.sh" # shared fn and vars
 
 # PARAMETERS
 parametersInstaller(){
@@ -40,7 +43,7 @@ updateSystem(){
 # INIT
 beforeInstaller(){
     sudo mkdir -p ${DESTINATION} # make destination dir
-    sudo mkdir -p ${INSTALLED} # make installed dir
+    sudo mkdir -p ${INSTALLED_DIR} # make installed dir
 }
 # EXEC
 execInstaller () {
@@ -52,16 +55,16 @@ execInstaller () {
         forceInstaller $1
     fi
    
-    if [ -f "${INSTALLED}/$1.status" ]; then # stop installer if .status file exist
+    if [ -f "${INSTALLED_DIR}/$1.status" ]; then # stop installer if .status file exist
         echo "${LINECAP} stopped!"
         echo "${LINECAP} $1.status already exists, installation in progress or completed."
     else # start installer if .status file missing
         echo "${LINECAP} searching for $1.installer.sh script."
         if [ -f "${INSTALLER_DIR}/$1.installer.sh" ]; then # check for scripts
             echo "${LINECAP} $1.installer.sh loaded."
-            if [ -d "${INSTALLED}/$1" ]; then
-                sudo mkdir -p ${INSTALLED}/$1 # make installed dir
-                sudo chmod -R 755 ${INSTALLED}/$1
+            if [ -d "${INSTALLED_DIR}/$1" ]; then
+                sudo mkdir -p ${INSTALLED_DIR}/$1 # make installed dir
+                sudo chmod -R 755 ${INSTALLED_DIR}/$1
             fi
             source "${INSTALLER_DIR}/$1.installer.sh" # exec installer script
         else
@@ -74,9 +77,9 @@ execInstaller () {
 }
 # FORCE
 forceInstaller(){
-    echo "${LINECAP} overwrite ${INSTALLED}/$1.status"   
-    if [ -f "${INSTALLED}/$1.status" ]; then
-        rm "${INSTALLED}/$1.status" # remove old .status file from installed dir
+    echo "${LINECAP} overwrite ${INSTALLED_DIR}/$1.status"   
+    if [ -f "${INSTALLED_DIR}/$1.status" ]; then
+        rm "${INSTALLED_DIR}/$1.status" # remove old .status file from installed dir
         echo "${LINECAP} $1.status cleaned."
     else 
         echo "${LINECAP} $1.status already cleaned."

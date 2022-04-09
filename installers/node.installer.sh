@@ -6,9 +6,6 @@
 # nodeJS setup
 ##########################################################################################
 
-# TOOLS
-source "./installer-tools.sh" # shared fn and vars
-
 # APACHE
 echo "${EMPTY}"
 echo "${LINECAP} nodeJS setup"
@@ -23,4 +20,4 @@ else
 fi
 
 # TOUCH-STATUS
-sudo touch "${INSTALLED}/node.status" #touch .status file
+sudo touch "${INSTALLED_DIR}/node.status" #touch .status file

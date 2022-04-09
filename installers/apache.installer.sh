@@ -6,9 +6,6 @@
 # Apache setup
 ##########################################################################################
 
-# TOOLS
-source "./installer-tools.sh" # shared fn and vars
-
 # ASKS
 _APACHE_USER(){ # 
     read -p "${LINECAP} Select user for '/var/www' folder:" APACHE_USER
@@ -34,4 +31,4 @@ echo "${LINECAP} apache restart"
 sudo service apache2 restart
 
 # TOUCH-STATUS
-sudo touch "${INSTALLED}/apache.status" #touch .status file
+sudo touch "${INSTALLED_DIR}/apache.status" #touch .status file
