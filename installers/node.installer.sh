@@ -18,9 +18,9 @@ if command -v node &> /dev/null
 then
     echo "node is installed, skipping..."
 else
-    curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+    sudo curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
     sudo apt-get install -y nodejs
 fi
 
 # TOUCH-STATUS
-touch "${INSTALLED}/node.status" #touch .status file
+sudo touch "${INSTALLED}/node.status" #touch .status file

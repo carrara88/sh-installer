@@ -32,4 +32,4 @@ sudo apt-get install gstreamer1.0-pulseaudio -y
 
 
 # TOUCH-STATUS
-touch "${INSTALLED}/gstreamer.status" #touch .status file
+sudo touch "${INSTALLED}/gstreamer.status" #touch .status file

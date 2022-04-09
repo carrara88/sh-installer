@@ -34,4 +34,4 @@ echo "${LINECAP} apache restart"
 sudo service apache2 restart
 
 # TOUCH-STATUS
-touch "${INSTALLED}/apache.status" #touch .status file
+sudo touch "${INSTALLED}/apache.status" #touch .status file

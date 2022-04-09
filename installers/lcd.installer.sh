@@ -39,10 +39,10 @@ lcdInstall(){
     echo "${LINECAP} LCD setup"
     echo "${EMPTY}"
     sudo rm -rf ${INSTALLED}/lcd # remove old files
-    git clone https://github.com/goodtft/LCD-show.git ${INSTALLED}/lcd # download new files
+    sudo git clone https://github.com/goodtft/LCD-show.git ${INSTALLED}/lcd # download new files
     sudo chmod -R 755 ${INSTALLED}/lcd # fix permissions
     # TOUCH-STATUS
-    touch "${INSTALLED}/lcd.status" #touch .status file
+    sudo touch "${INSTALLED}/lcd.status" #touch .status file
 }
 # LCD
 lcdShow(){
