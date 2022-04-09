@@ -2,9 +2,9 @@
 
 Created for an easy raspberry-pi setup, it can be used on any debian/unix system, enjoy!
 
-__Version:__ 0.1 (unstable|incomplete) \
+__Version:__ 0.1 (unstable) \
 __OS:__ Debian/Unix \
-__Require:__ curl, npm, git
+__Require:__ curl, npm, git \
 
 ![Setup](screen.jpg)
 
