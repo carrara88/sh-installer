@@ -13,7 +13,13 @@ source "./installer-tools.sh" # shared fn and vars
 echo "${EMPTY}"
 echo "${LINECAP} php setup"
 echo "${EMPTY}"
-sudo apt-get install php-fpm php-opcache php-cli php-gd php-curl -y # php
+
+if command -v php &> /dev/null 
+then
+    echo "php is installed, skipping..."
+else
+    sudo apt-get install php-fpm php-opcache php-cli php-gd php-curl -y # php
+fi
 
 # RESTART
 echo "${EMPTY}"

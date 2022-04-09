@@ -13,8 +13,14 @@ source "./installer-tools.sh" # shared fn and vars
 echo "${EMPTY}"
 echo "${LINECAP} mysql setup"
 echo "${EMPTY}"
-sudo apt-get install mariadb-server php-mysql -y # mysql
-sudo mysql_secure_installation -y
+
+if command -v mysql &> /dev/null 
+then
+    echo "mysql is installed, skipping..."
+else
+    sudo apt-get install mariadb-server php-mysql -y # mysql
+    sudo mysql_secure_installation -y
+fi
 
 # RESTART
 echo "${EMPTY}"

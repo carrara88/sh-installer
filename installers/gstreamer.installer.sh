@@ -22,7 +22,7 @@ echo "${EMPTY}"
 sudo apt-get install libgstreamer1.0-dev -y
 sudo apt-get install libgstreamer-plugins-base1.0-dev -y
 sudo apt-get install libgstreamer-plugins-bad1.0-dev -y
-sudo apt-get install  gstreamer1.0-plugins-ugly -y
+sudo apt-get install gstreamer1.0-plugins-ugly -y
 sudo apt-get install gstreamer1.0-tools -y
 sudo apt-get install gstreamer1.0-gl -y
 sudo apt-get install gstreamer1.0-gtk3 -y

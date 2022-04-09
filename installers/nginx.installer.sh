@@ -14,7 +14,13 @@ echo "${EMPTY}"
 echo "${LINECAP} nginx setup"
 echo "${EMPTY}"
 
-sudo apt install nginx -y
+if command -v nginx &> /dev/null 
+then
+    echo "nginx is installed, skipping..."
+else
+	sudo apt install nginx -y
+fi
+
 sudo ufw allow 'Nginx Full' -y
 sudo nft add rule inet filter input tcp dport {80, 443} ct state new,established counter accept
 
