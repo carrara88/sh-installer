@@ -14,6 +14,12 @@ OS_VERSION="bullseye" # OS version
 DESTINATION="/var/www/sh-installer" # installers destination dir
 INSTALLED_DIR="${DESTINATION}/installed" # installers status dir
 INSTALLER_DIR="${DESTINATION}/installers" # base installer scripts dir
+AVAILABLE_INSTALLERS=(${INSTALLER_DIR}/*.installer.sh)
+
+INSTALLERS_EXTENSION=".installer.sh"
+AVAILABLE_INSTALLERS=( ${INSTALLER_DIR}/*${INSTALLERS_EXTENSION} )
+AVAILABLE_INSTALLERS=( "${AVAILABLE_INSTALLERS[@]##*/}" )
+AVAILABLE_INSTALLERS=( "${AVAILABLE_INSTALLERS[@]%${INSTALLERS_EXTENSION}}" )
 
 # TOOLS
 source "${DESTINATION}/installer-tools.sh" # shared fn and vars
